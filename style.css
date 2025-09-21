@@ -1,0 +1,99 @@
+/* CSS Reset */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blanchedalmond;
+    font-family:'Times New Roman', Times, serif; /*更改字体*/
+    display: flex;
+    justify-content: center; /*水平居中*/
+    align-items: center; /*垂直居中*/
+    min-height: 100vh; /*最小高度100视窗高度*/
+}
+
+.container { /*人为定义class前需要加上"."，默认class不需要*/
+    background-color: rgb(247, 220, 180);
+    border-radius: 8px; /*圆角*/
+    box-shadow : 0 5px 15px rgba(0, 0, 0, 0.1); /*阴影*/ /*x轴偏移, y轴偏移, 模糊半径, 颜色*/
+    max-width: 400px; /*最大宽度*/
+    width: 100%; /*宽度100%*/ /*width: 100% 和 max-width: 400px 联合使用，表示容器宽度最大为400px，但在屏幕宽度小于400px时，容器宽度会自动调整为屏幕宽度的100%。*/
+    padding: 30px; /*内边距*/
+    overflow: hidden; /*超出部分隐藏*/
+}
+
+h1 {
+    text-align: center; /*文本居中*/
+    margin-bottom: 1.2rem; /*下边距*/
+
+}
+
+.form_item {
+    margin-bottom: 20px; /*下边距*/
+    position: relative; /*相对定位*/
+    font-weight: bold; /*加粗*/
+    font-size: 24px;
+}
+
+label {
+    display:block; /*块级元素可以自动换行*/
+    margin-bottom: 8px; /*下边距*/
+    color:#555; /*字体颜色*/
+}
+
+input {
+    border: 2px solid #f0f0f0; /*边框*/
+    border-radius: 4px; /*圆角*/
+    display: block;
+    width: 100%; /*宽度100%*/
+    padding: 10px; /*内边距*/
+    font-size: 14px; /*字体大小*/
+}
+
+button {
+    background-color: rgb(255, 179, 71);
+    border: none; /*去掉边框*/
+    border-radius: 4px; /*圆角*/
+    color: white; /*字体颜色*/
+    cursor: pointer; /*鼠标悬停时显示为手指*/
+    font-size: 16px; /*字体大小*/
+    padding: 10px 15px; /*内边距 上下10px 左右15px*/
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /*过渡效果*/
+    width:100%; /*宽度100%*/
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+small {
+    color: red; /*字体颜色*/
+    position: absolute; /*绝对定位*/
+    bottom: -18px; /*底部距离*/
+    left: 0; /*左边距离*/
+    visibility: hidden; /*隐藏*/
+    font-size: 12px; /*字体大小*/
+}
+
+button:hover {
+    background-color: #2980b9
+}
+
+.form_item.error small {
+    visibility: visible; /*显示*/
+    border-color:red
+}
+
+.form_item.success input {
+    border-color: green;
+}
+
+.form_item.error small {
+    visibility: visible; /*显示*/
+    border-color:red
+}
