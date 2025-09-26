@@ -19,12 +19,15 @@ form.addEventListener("submit", function(event) {
     }
 
     if (isFormValid) {
-        alert("Registration successful!");
         form.reset();
         document.querySelectorAll(".form_item").forEach((el) => {
             el.className = "form_item";
+        
+        
+        document.getElementById("successModal").style.display = "flex";
+        document.getElementById("AnonLaugh").play();
         });
-    }
+      }
 });
 
 function checkRequired(inputArray) {
@@ -44,7 +47,7 @@ function checkRequired(inputArray) {
 
 function checkPasswordsMatch(input1, input2) {
   if (input1.value !== input2.value) {
-    showError(input2, "Passwords do not match");
+    showError(input2, "How could you forget that? Passwords do not match");
     return false;
   }
   return true;
@@ -85,9 +88,15 @@ function checkEmail(input) {
     console.log("checkEmail called with:", input.value);   // <-- 调试
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!re.test(input.value.trim())) {
-    showError(input, "Email is not valid");
+    showError(input, "Dame! Your Email is not valid");
     return false;
   }
   showSuccess(input);
   return true;
 }
+
+document.getElementById("playGifBtn").addEventListener("click", function() {
+    document.getElementById("successModal").style.display = "flex";
+    document.getElementById("AnonLaugh").currentTime = 0;
+    document.getElementById("AnonLaugh").play();
+});
